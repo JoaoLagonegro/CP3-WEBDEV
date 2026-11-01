@@ -1,13 +1,16 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import Home from '../pages/Home';
 import ProjectDetail from '../pages/ProjectDetail';
-import Contact from '../pages/Contact';
-import Login from '../pages/Login';
-import Dashboard from '../pages/Dashboard';
 import NotFound from '../pages/NotFound';
-import AuthLayout from './AuthLayout';
 import ProtectedRoute from './ProtectedRoute';
+
+// Estas telas só são baixadas quando o visitante as abre
+const Contact = lazy(() => import('../pages/Contact'));
+const Login = lazy(() => import('../pages/Login'));
+const Dashboard = lazy(() => import('../pages/Dashboard'));
+const AuthLayout = lazy(() => import('./AuthLayout'));
 
 export default function AppRoutes() {
   return (
