@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
+import FeaturedProjects from '../components/projects/FeaturedProjects';
 import ProjectList from '../components/projects/ProjectList';
 
 export default function Home() {
@@ -13,8 +14,10 @@ export default function Home() {
         </Button>
       </section>
 
+      <FeaturedProjects />
+
       <section>
-        <h2>Projetos</h2>
+        <h2>Todos os projetos</h2>
         <ProjectList />
       </section>
     </>
