@@ -14,3 +14,17 @@ export async function sendMessage(data) {
     throw new Error('Não foi possível enviar sua mensagem. Tente novamente.');
   }
 }
+
+export async function fetchMessages() {
+  const { data, error } = await supabase
+    .from('messages')
+    .select('*')
+    .order('created_at', { ascending: false });
+  if (error) throw error;
+  return data;
+}
+
+export async function setMessageReplied(id, replied) {
+  const { error } = await supabase.from('messages').update({ replied }).eq('id', id);
+  if (error) throw error;
+}
