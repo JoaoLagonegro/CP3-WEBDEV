@@ -19,21 +19,23 @@ Portfólio em React (Vite, JavaScript). Siga SEMPRE estas regras.
 ## Commits (Conventional Commits)
 
 - Formato: `tipo: descrição em português no presente`
-- Tipos: feat, fix, docs, style, refactor, test, chore
+- Tipos: feat, fix, docs, style, refactor, test, perf, chore
 - Ex.: `feat: adiciona validação do formulário de contato`
 
 ## Branches (GitHub Flow)
 
 - `main` sempre estável e com deploy automático
-- Uma branch por funcionalidade: `feature/nome`, `fix/nome`, `chore/nome`
+- Uma branch por funcionalidade: `feature/nome`, `fix/nome`, `chore/nome`, `style/nome`, `docs/nome`
 - Integrar via Pull Request
 
 ## Stack permitida
 
 React Router, TanStack Query, React Hook Form, Zod, EmailJS, Supabase,
-CSS Modules, Vitest + Testing Library. Não adicionar outras bibliotecas.
+CSS Modules, Vitest + Testing Library, sharp (imagens), ESLint, Prettier, Husky, lint-staged e commitlint. Não adicionar outras bibliotecas sem justificar.
 
 ## Qualidade
 
 - Rodar lint e prettier antes de commitar (já automatizado pelo Husky)
 - Nunca commitar `.env`
+- Imagens: só as versões otimizadas (WebP) vão ao repositório; `foto-original.*` fica no `.gitignore`. Gerar com `node scripts/optimize-images.mjs`
+- Mais detalhes (scripts, variáveis, arquitetura, desempenho) estão no `README.md`
