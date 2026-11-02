@@ -4,5 +4,8 @@
   flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--border);
+  border: 3px solid var(--bg);
+  box-shadow:
+    0 0 0 3px var(--primary),
+    0 10px 30px var(--glow);
 }
