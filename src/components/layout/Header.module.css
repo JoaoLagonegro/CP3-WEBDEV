@@ -1,4 +1,7 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
 }
@@ -13,10 +16,26 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   text-decoration: none;
   color: var(--text);
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--gradient);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0;
 }
 
 .nav {
@@ -28,9 +47,14 @@
 .nav a {
   text-decoration: none;
   color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.nav a:hover {
+  color: var(--text);
 }
 
 .nav a:global(.active) {
-  color: var(--primary);
+  color: var(--link);
   font-weight: 600;
 }

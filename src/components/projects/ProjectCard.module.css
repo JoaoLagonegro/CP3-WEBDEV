@@ -4,6 +4,14 @@
   flex-direction: column;
   gap: 0.75rem;
   min-height: 250px;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
 }
 
 .header {
@@ -24,12 +32,21 @@
   overflow: hidden;
 }
 
+.title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.title a:hover {
+  color: var(--link);
+}
+
 .badge {
   flex-shrink: 0;
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
   background: var(--primary);
   color: var(--primary-contrast);
