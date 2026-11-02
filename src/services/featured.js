@@ -1,12 +1,19 @@
-import { supabase } from './supabase';
+// O Supabase é carregado só quando a consulta roda, fora do pacote inicial
+async function getSupabase() {
+  const { supabase } = await import('./supabase');
+  return supabase;
+}
 
 export async function fetchFeatured() {
+  const supabase = await getSupabase();
   const { data, error } = await supabase.from('featured_projects').select('repo_name');
   if (error) throw error;
   return data.map((row) => row.repo_name);
 }
 
 export async function setFeatured(repoName, featured) {
+  const supabase = await getSupabase();
+
   if (featured) {
     const { error } = await supabase
       .from('featured_projects')

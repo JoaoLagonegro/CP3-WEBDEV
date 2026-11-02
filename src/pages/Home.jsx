@@ -1,23 +1,25 @@
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
-import FeaturedProjects from '../components/projects/FeaturedProjects';
+import ProfilePhoto from '../components/home/ProfilePhoto';
 import ProjectList from '../components/projects/ProjectList';
+import styles from './Home.module.css';
 
 export default function Home() {
   return (
     <>
-      <section>
-        <h1>Olá, eu sou [seu nome]</h1>
-        <p>Desenvolvedor(a) front-end. Veja abaixo os meus projetos.</p>
-        <Button as={Link} to="/contato">
-          Entre em contato
-        </Button>
+      <section className={styles.hero}>
+        <ProfilePhoto />
+        <div>
+          <h1>Olá, eu sou João Pedro Lagonegro</h1>
+          <p>Desenvolvedor front-end. Veja abaixo os meus projetos.</p>
+          <Button as={Link} to="/contato">
+            Entre em contato
+          </Button>
+        </div>
       </section>
 
-      <FeaturedProjects />
-
       <section>
-        <h2>Todos os projetos</h2>
+        <h2>Projetos</h2>
         <ProjectList />
       </section>
     </>

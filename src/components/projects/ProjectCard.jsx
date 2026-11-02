@@ -3,12 +3,15 @@ import Card from '../ui/Card';
 import { formatDate } from '../../utils/formatDate';
 import styles from './ProjectCard.module.css';
 
-export default function ProjectCard({ repo }) {
+export default function ProjectCard({ repo, featured = false }) {
   return (
     <Card className={styles.card}>
-      <h3 className={styles.title}>
-        <Link to={`/projetos/${repo.name}`}>{repo.name}</Link>
-      </h3>
+      <div className={styles.header}>
+        <h3 className={styles.title}>
+          <Link to={`/projetos/${repo.name}`}>{repo.name}</Link>
+        </h3>
+        {featured && <span className={styles.badge}>★ Destaque</span>}
+      </div>
       <p className={styles.description}>{repo.description ?? 'Sem descrição.'}</p>
       <div className={styles.meta}>
         <span>{repo.language ?? 'Linguagem não informada'}</span>
