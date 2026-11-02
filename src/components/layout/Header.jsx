@@ -7,7 +7,8 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <NavLink to="/" className={styles.logo}>
-          Meu Portfólio
+          <span className={styles.mark}>JP</span>
+          <span>João Pedro</span>
         </NavLink>
         <nav className={styles.nav}>
           <NavLink to="/">Início</NavLink>

@@ -1,22 +1,36 @@
 :root,
 [data-theme='dark'] {
-  --bg: #0f1115;
-  --surface: #181b22;
-  --text: #e8eaf0;
-  --text-muted: #9aa1b2;
-  --primary: #6c8cff;
-  --primary-contrast: #0f1115;
-  --border: #2a2f3a;
+  --bg: #0b0d12;
+  --surface: #141823;
+  --surface-2: #1a2030;
+  --text: #eef0f6;
+  --text-muted: #9ba3b8;
+  --primary: #6d4aff;
+  --primary-contrast: #ffffff;
+  --accent: #22d3ee;
+  --link: #a99bff;
+  --border: #262d40;
+  --glow: rgba(109, 74, 255, 0.2);
+  --gradient: linear-gradient(135deg, #7c5cff 0%, #22d3ee 100%);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
 }
 
 [data-theme='light'] {
-  --bg: #f6f7fb;
+  --bg: #f5f6fb;
   --surface: #ffffff;
-  --text: #171923;
-  --text-muted: #5b6275;
-  --primary: #3b5bdb;
+  --surface-2: #eef0fa;
+  --text: #141726;
+  --text-muted: #566079;
+  --primary: #5a3df0;
   --primary-contrast: #ffffff;
-  --border: #dfe2ec;
+  --accent: #0891b2;
+  --link: #4b32d6;
+  --border: #dde0ee;
+  --glow: rgba(90, 61, 240, 0.12);
+  --gradient: linear-gradient(135deg, #5a3df0 0%, #0891b2 100%);
+  --shadow: 0 10px 30px rgba(30, 40, 90, 0.1);
+  color-scheme: light;
 }
 
 * {
@@ -31,13 +45,47 @@ body {
     'Segoe UI',
     Roboto,
     sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: radial-gradient(900px 420px at 12% -8%, var(--glow), transparent 70%);
+  background-repeat: no-repeat;
   color: var(--text);
   line-height: 1.6;
 }
 
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  margin: 0 0 0.75rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+h2::before {
+  content: '';
+  width: 6px;
+  height: 1.2em;
+  border-radius: 3px;
+  background: var(--gradient);
+}
+
+section + section {
+  margin-top: 3rem;
+}
+
 a {
-  color: var(--primary);
+  color: var(--link);
 }
 
 img {
