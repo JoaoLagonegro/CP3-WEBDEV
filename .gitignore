@@ -25,3 +25,6 @@ dist-ssr
 
 # Variáveis de ambiente
 .env
+
+# Foto original (só as versões otimizadas vão ao repositório)
+src/assets/foto-original.*

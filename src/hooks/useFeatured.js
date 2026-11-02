@@ -5,6 +5,8 @@ export function useFeatured() {
   return useQuery({
     queryKey: ['featured'],
     queryFn: fetchFeatured,
+    // Destaque é um extra: se falhar, o site segue sem ele
+    retry: false,
   });
 }
 
